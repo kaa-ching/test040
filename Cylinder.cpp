@@ -1,10 +1,15 @@
 #include "Cylinder.h"
 
-Cylinder::Cylinder(int cylNum)
-    : m_cylinderNumber(cylNum)
+Cylinder::Cylinder(int cylPos)
+    : m_cylinderPosition(cylPos)
 {
 }
 
 Cylinder::~Cylinder()
 {
+}
+
+Cylinder::Stroke Cylinder::getStroke()
+{
+    return Stroke::INTAKE;
 }

@@ -11,7 +11,7 @@ all: test
 clean:
 	rm -f *.o *~ test
 
-test: main.o testEngine.o Engine.o Cylinder.o
+test: main.o testEngine.o Engine.o testCylinder.o Cylinder.o
 	${CXX} ${COMMONOBJS} $^ -o $@ ${LDFLAGS}
 
 #-----------------------------

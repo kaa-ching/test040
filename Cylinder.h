@@ -4,11 +4,21 @@
 class Cylinder
 {
 public:
-    explicit Cylinder(int cylNum);
+    explicit Cylinder(int cylPos);
     virtual ~Cylinder();
+    
+    enum class Stroke
+    {
+        INTAKE,
+        COMPRESSION,
+        COMBUSTION,
+        EXHAUST
+    };
+    
+    Stroke getStroke();
 
 private:
-    int m_cylinderNumber;
+    int m_cylinderPosition;
 };
 
 #endif // ENGINE_H

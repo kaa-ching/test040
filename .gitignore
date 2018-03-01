@@ -1,1 +1,3 @@
-wordcount
+test/test
+*.o
+

@@ -11,8 +11,12 @@ public:
     explicit Engine(int numCyl);
     virtual ~Engine();
 
+    void rotate(double rotations);
+    double getRotations();
+
 private:
     std::vector<Cylinder> m_cylinders;
+    double m_rotations;
 };
 
 #endif // ENGINE_H

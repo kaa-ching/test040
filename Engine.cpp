@@ -9,3 +9,19 @@ Engine::Engine(int numCyl)
 Engine::~Engine()
 {
 }
+
+void Engine::rotate(double rotations)
+{
+//     while (m_rotations < )
+//     {
+//         for (auto& c : m_cylinders)
+//         {
+//             c.rotate(0.5);
+//         }
+//     }
+}
+
+double getRotations()
+{
+    return 0.0;
+}
