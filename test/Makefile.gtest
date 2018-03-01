@@ -1,0 +1,27 @@
+GTEST_DIR=googletest/googletest
+GMOCK_DIR=googletest/googlemock
+
+CXX=g++
+AR=ar
+INCLUDES=-isystem ${GTEST_DIR}/include -I${GTEST_DIR} -isystem ${GMOCK_DIR}/include -I${GMOCK_DIR}
+
+all: includes libgmock.a
+
+libgmock.a: gtest-all.o gmock-all.o
+	${AR} -rv libgmock.a gtest-all.o gmock-all.o
+
+gtest-all.o: ${GTEST_DIR}/src/gtest-all.cc
+	${CXX} ${INCLUDES} -pthread -c ${GTEST_DIR}/src/gtest-all.cc
+
+gmock-all.o: ${GMOCK_DIR}/src/gmock-all.cc
+	${CXX} ${INCLUDES} -pthread -c ${GMOCK_DIR}/src/gmock-all.cc
+
+includes:
+	rm -rf include
+	mkdir -p include/gtest
+	cp -a ${GTEST_DIR}/include/gtest include/
+	mkdir -p include/gmock
+	cp -a ${GMOCK_DIR}/include/gmock include/
+
+clean:
+	rm -rf include libgmock.a *.o *~
