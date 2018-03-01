@@ -8,7 +8,7 @@ using ::testing::Return;
 using ::testing::ReturnRef;
 using ::testing::Invoke;
 
-TEST(EngineFixture, Test_Engine_Creation)
+TEST(Engine, Test_Engine_Creation)
 {
     EXPECT_NO_THROW(Engine myEngine(4));
 }
