@@ -19,6 +19,8 @@ public:
 
 private:
     int m_cylinderPosition;
+    
+    Stroke m_stroke;
 };
 
 #endif // ENGINE_H
