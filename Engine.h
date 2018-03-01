@@ -2,10 +2,12 @@
 #define ENGINE_H
 
 #include "Cylinder.h"
+#include "IntakeItf.h"
+#include "ExhaustItf.h"
 
 #include <vector>
 
-class Engine
+class Engine : public IntakeItf, public ExhaustItf
 {
 public:
     explicit Engine(int numCyl);

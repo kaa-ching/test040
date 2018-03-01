@@ -20,3 +20,7 @@ ${BIN}: ${COMMONOBJS}
 %.o: %.cpp
 	${CXX} ${CXXFLAGS} -c $< -o $@
 
+test: test/test
+
+test/test:
+	${MAKE} -C test test
