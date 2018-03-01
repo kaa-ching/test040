@@ -1,6 +1,7 @@
 #include "SparkPlug.h"
+#include <iostream>
 
-SparkPlug::SparkPlug(int cylNr)
+SparkPlug::SparkPlug()
 {
 }
 
@@ -8,7 +9,7 @@ SparkPlug::~SparkPlug()
 {
 }
 
-void SparkPlug::spark()
+void SparkPlug::Spark()
 {
     std::cout << "Spark" << std::endl;
 }

@@ -3,13 +3,16 @@
 
 #include "IntakeItf.h"
 #include "ExhaustItf.h"
+#include "SparkPlug.h"
+
+#include <memory>
 
 class Cylinder
 {
 public:
-    explicit Cylinder(int cylPos, IntakeItf& intake, ExhaustItf& exhaust);
+    Cylinder(int cylPos, IntakeItf& intake, ExhaustItf& exhaust, std::unique_ptr<SparkPlug> sparkPlug);
     virtual ~Cylinder();
-    
+
     enum class Stroke
     {
         INTAKE,
@@ -29,6 +32,8 @@ private:
     
     IntakeItf& m_intake;
     ExhaustItf& m_exhaust;
+    
+    std::unique_ptr<SparkPlug> m_sparkPlug;
 };
 
 #endif // ENGINE_H

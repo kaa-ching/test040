@@ -1,9 +1,10 @@
 #include "Cylinder.h"
 
-Cylinder::Cylinder(int cylPos, IntakeItf& intake, ExhaustItf& exhaust)
+Cylinder::Cylinder(int cylPos, IntakeItf& intake, ExhaustItf& exhaust, std::unique_ptr<SparkPlug> sparkPlug)
     : m_cylinderPosition(cylPos)
     , m_intake(intake)
     , m_exhaust(exhaust)
+    , m_sparkPlug(std::move(sparkPlug))
 {
     m_stroke = static_cast<Stroke>(m_cylinderPosition%4);
 }
@@ -27,6 +28,7 @@ void Cylinder::rotate()
             break;
         case Stroke::COMPRESSION:
             m_stroke = Stroke::COMBUSTION;
+            m_sparkPlug->Spark();
             break;
         case Stroke::COMBUSTION:
             m_stroke = Stroke::EXHAUST;

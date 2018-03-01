@@ -17,7 +17,7 @@ public:
     double getRotations();
 
 private:
-    std::vector<Cylinder> m_cylinders;
+    std::vector<std::unique_ptr<Cylinder>> m_cylinders;
     double m_rotations;
 };
 

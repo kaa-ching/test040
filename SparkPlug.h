@@ -4,10 +4,10 @@
 class SparkPlug
 {
 public:
-    explicit SparkPlug();
+    SparkPlug();
     virtual ~SparkPlug();
 
-    void spark();
+    virtual void Spark();
 };
 
 #endif // ENGINE_H

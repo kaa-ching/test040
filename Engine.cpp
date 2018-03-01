@@ -3,7 +3,7 @@
 Engine::Engine(int numCyl)
 {
     for (int i=0; i<numCyl; i++)
-        m_cylinders.emplace_back(i, *this, *this);
+        m_cylinders.emplace_back(std::make_unique<Cylinder>(i, *this, *this, std::move(std::make_unique<SparkPlug>())));
 }
 
 Engine::~Engine()
